@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LendFlow-SaaS — Digital Lending Infrastructure | Tsohle Digital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #FF6B35;
+            --primary-dark: #E85A2A;
+            --secondary: #004E89;
+            --accent: #FFD23F;
+            --dark: #0A0F1C;
+            --dark-light: #1A1F2E;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B8C1D9;
+            --border: rgba(255,255,255,0.1);
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 3rem; }
+        
+        nav { padding: 2rem 0; border-bottom: 1px solid var(--border); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        
+        .logo { 
+            font-family: 'Raleway', sans-serif; 
+            font-size: 1.5rem; 
+            font-weight: 800; 
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+        
+        .logo-tsohle { color: var(--primary); }
+        
+        .back-link { 
+            color: var(--text-secondary); 
+            text-decoration: none; 
+            font-weight: 500; 
+            transition: color 0.3s; 
+        }
+        
+        .back-link:hover { color: var(--primary); }
+        
+        .product-hero { padding: 6rem 0 4rem; }
+        
+        .product-badge {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            max-width: 900px;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            padding: 3rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stat { text-align: center; }
+
+        .stat-number {
+            font-family: 'Raleway', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label { color: var(--text-secondary); font-size: 0.95rem; }
+
+        .section { padding: 5rem 0; border-bottom: 1px solid var(--border); }
+
+        .section-title {
+            font-family: 'Raleway', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-description {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            max-width: 800px;
+        }
+
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .feature-list { list-style: none; }
+
+        .feature-list li {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .feature-list li:last-child { border-bottom: none; }
+
+        .feature-title {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .feature-desc { color: var(--text-secondary); }
+
+        .highlight-box {
+            background: var(--dark-light);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+
+        .highlight-box h3 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .tech-badge {
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 8px;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .cta-section { padding: 6rem 0; text-align: center; }
+
+        .btn {
+            padding: 1.2rem 2.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5);
+        }
+
+        footer {
+            background: var(--dark-light);
+            padding: 3rem 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 968px) {
+            h1 { font-size: 2.5rem; }
+            .stats-row, .two-col-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo"><span class="logo-tsohle">Tsohle</span> Digital</a>
+                <a href="index.html" class="back-link">← Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="product-hero">
+            <span class="product-badge">Fintech Infrastructure</span>
+            <h1>LendFlow-SaaS</h1>
+            <p class="hero-subtitle">
+                A SaaS loan origination platform targeting micro-lenders, fintechs, BNPL providers, and digital banks. Handles the full lending pipeline from application to decisioning with compliance-aware workflows and regulatory audit trails.
+            </p>
+
+            <div class="stats-row">
+                <div class="stat">
+                    <div class="stat-number">KYC</div>
+                    <div class="stat-label">Workflow Ready</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Audit Trail</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">Fast</div>
+                    <div class="stat-label">Decisioning</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">BNPL</div>
+                    <div class="stat-label">Provider Ready</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">The Problem We Solved</h2>
+            <p class="section-description">
+                Digital lenders need robust infrastructure that handles compliance, risk assessment, and operational workflows — but most fintech platforms are either over-engineered enterprise monsters or under-engineered prototypes that don't scale.
+            </p>
+            <div class="highlight-box">
+                <h3>Our Solution: Production-Ready Lending Infrastructure</h3>
+                <p style="color: var(--text-secondary); line-height: 1.8;">
+                    LendFlow-SaaS provides the complete underwriting and compliance core that fintechs need, with deployment-ready infrastructure. It's explicitly focused on the operational pipeline — not UI polish — so you can integrate it into your brand and customize the experience.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">The Complete Lending Pipeline</h2>
+            <p class="section-description">
+                From initial application to final approval, LendFlow-SaaS handles every step of the loan origination process with compliance awareness built-in.
+            </p>
+
+            <div class="two-col-grid">
+                <ul class="feature-list">
+                    <li>
+                        <div class="feature-title">Loan Application UI</div>
+                        <div class="feature-desc">Complete application capture with field validation and progress tracking</div>
+                    </li>
+                    <li>
+                        <div class="feature-title">KYC Capture</div>
+                        <div class="feature-desc">Identity verification workflows with document upload and validation requirements</div>
+                    </li>
+                    <li>
+                        <div class="feature-title">Document Upload & Analysis</div>
+                        <div class="feature-desc">Secure upload, storage, and processing of supporting documentation with metadata extraction</div>
+                    </li>
+                </ul>
+
+                <ul class="feature-list">
+                    <li>
+                        <div class="feature-title">Affordability Checking</div>
+                        <div class="feature-desc">Income verification and debt-to-income ratio calculations for responsible lending</div>
+                    </li>
+                    <li>
+                        <div class="feature-title">Fraud Detection</div>
+                        <div class="feature-desc">Risk scoring and anomaly detection to identify suspicious applications</div>
+                    </li>
+                    <li>
+                        <div class="feature-title">Decisioning Engine</div>
+                        <div class="feature-desc">Automated approve/decline/review logic with configurable risk thresholds</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Compliance & Governance</h2>
+            <p class="section-description">
+                Fintech regulation demands complete auditability and human oversight. LendFlow-SaaS is built with compliance-first thinking.
+            </p>
+
+            <div class="highlight-box">
+                <h3>What This Signals to Regulators</h3>
+                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+                    <strong>Complete Audit Trails:</strong> Every application state change, document upload, decision, and manual intervention is logged with timestamp, user, and full context.
+                </p>
+                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+                    <strong>Manual Review Queues:</strong> Applications that fall into grey areas automatically route to human reviewers with full application context and risk indicators.
+                </p>
+                <p style="color: var(--text-secondary); line-height: 1.8;">
+                    <strong>Compliance Reporting:</strong> Generate audit reports showing application volumes, approval rates, manual intervention frequency, and risk score distributions.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Technical Architecture</h2>
+            <p class="section-description">
+                Built on FastAPI with PostgreSQL for reliability and Alembic for database migration management. Includes Playwright-based visual testing for UI validation.
+            </p>
+
+            <div class="tech-stack">
+                <span class="tech-badge">FastAPI</span>
+                <span class="tech-badge">PostgreSQL</span>
+                <span class="tech-badge">SQLite (dev mode)</span>
+                <span class="tech-badge">Alembic Migrations</span>
+                <span class="tech-badge">Playwright Testing</span>
+                <span class="tech-badge">Render Blueprint</span>
+                <span class="tech-badge">Production Ready</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Deployment Ready</h2>
+            <p class="section-description">
+                Unlike most fintech platforms that require months of DevOps work, LendFlow-SaaS includes production deployment configuration out of the box.
+            </p>
+
+            <div class="highlight-box">
+                <h3>One-Click Deployment to Render</h3>
+                <p style="color: var(--text-secondary); line-height: 1.8;">
+                    Included <code>render.yaml</code> Blueprint configuration means you can deploy the entire stack — API, database, workers — to production infrastructure with a single click. No Kubernetes expertise required.
+                </p>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2 class="section-title">Ready to Build Your Lending Platform?</h2>
+            <p class="section-description" style="margin: 0 auto 2rem; max-width: 600px;">
+                Schedule a consultation to see how LendFlow-SaaS can accelerate your fintech launch.
+            </p>
+            <a href="mailto:contact@tsohle.co.za" class="btn">Schedule Consultation</a>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Tsohle Digital and Systems Solutions</p>
+        </div>
+    </footer>
+</body>
+</html>

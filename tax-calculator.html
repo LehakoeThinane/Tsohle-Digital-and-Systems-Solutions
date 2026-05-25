@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SA Income Tax Calculator — WordPress Plugin | Tsohle Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {--primary: #FF6B35; --primary-dark: #E85A2A; --secondary: #004E89; --accent: #FFD23F; --dark: #0A0F1C; --dark-light: #1A1F2E; --text-primary: #FFFFFF; --text-secondary: #B8C1D9; --border: rgba(255,255,255,0.1);}
+        body {font-family: 'Work Sans', sans-serif; background: var(--dark); color: var(--text-primary); line-height: 1.7;}
+        .container {max-width: 1200px; margin: 0 auto; padding: 0 3rem;}
+        nav {padding: 2rem 0; border-bottom: 1px solid var(--border);}
+        .nav-container {display: flex; justify-content: space-between; align-items: center;}
+        .logo {font-family: 'Raleway', sans-serif; font-size: 1.5rem; font-weight: 800; text-decoration: none; color: var(--text-primary);}
+        .logo-tsohle {color: var(--primary);}
+        .back-link {color: var(--text-secondary); text-decoration: none; font-weight: 500; transition: color 0.3s;}
+        .back-link:hover {color: var(--primary);}
+        .product-hero {padding: 6rem 0 4rem;}
+        .product-badge {display: inline-block; padding: 0.6rem 1.5rem; background: rgba(255, 107, 53, 0.1); border: 1px solid rgba(255, 107, 53, 0.3); border-radius: 50px; font-size: 0.85rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2rem;}
+        h1 {font-family: 'Raleway', sans-serif; font-size: 4rem; font-weight: 900; line-height: 1.15; margin-bottom: 1.5rem; letter-spacing: -0.02em;}
+        .hero-subtitle {font-size: 1.4rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 3rem; max-width: 900px;}
+        .stats-row {display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; padding: 3rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);}
+        .stat {text-align: center;}
+        .stat-number {font-family: 'Raleway', sans-serif; font-size: 3rem; font-weight: 900; background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem;}
+        .stat-label {color: var(--text-secondary); font-size: 0.95rem;}
+        .section {padding: 5rem 0; border-bottom: 1px solid var(--border);}
+        .section-title {font-family: 'Raleway', sans-serif; font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;}
+        .section-description {font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 3rem; max-width: 800px;}
+        .two-col-grid {display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem;}
+        .feature-list {list-style: none;}
+        .feature-list li {padding: 1.5rem 0; border-bottom: 1px solid var(--border);}
+        .feature-list li:last-child {border-bottom: none;}
+        .feature-title {font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; font-size: 1.1rem;}
+        .feature-desc {color: var(--text-secondary);}
+        .highlight-box {background: var(--dark-light); border: 1px solid var(--border); border-left: 4px solid var(--primary); padding: 2.5rem; border-radius: 12px; margin: 3rem 0;}
+        .highlight-box h3 {font-family: 'Raleway', sans-serif; font-size: 1.5rem; color: var(--primary); margin-bottom: 1rem;}
+        .tech-stack {display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;}
+        .tech-badge {padding: 0.75rem 1.5rem; background: rgba(255, 107, 53, 0.1); border: 1px solid rgba(255, 107, 53, 0.3); border-radius: 8px; font-weight: 600; color: var(--primary); font-size: 0.9rem;}
+        .cta-section {padding: 6rem 0; text-align: center;}
+        .btn {padding: 1.2rem 2.5rem; background: var(--primary); color: white; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s;}
+        .btn:hover {background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5);}
+        footer {background: var(--dark-light); padding: 3rem 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-secondary);}
+        .code-box {background: var(--dark-light); border: 1px solid var(--border); padding: 1.5rem; border-radius: 8px; font-family: monospace; color: var(--accent); margin: 2rem 0;}
+        @media (max-width: 968px) {h1 {font-size: 2.5rem;} .stats-row, .two-col-grid {grid-template-columns: 1fr;}}
+    </style>
+</head>
+<body>
+    <nav><div class="container"><div class="nav-container"><a href="index.html" class="logo"><span class="logo-tsohle">Tsohle</span> Digital</a><a href="index.html" class="back-link">← Back to Home</a></div></div></nav>
+
+    <div class="container">
+        <section class="product-hero">
+            <span class="product-badge">WordPress Plugin</span>
+            <h1>SA Income Tax Calculator</h1>
+            <p class="hero-subtitle">A WordPress plugin for estimating South African income tax. Provides accurate PAYE, UIF, and medical tax credit calculations with PDF generation and WordPress Media Library integration.</p>
+            <div class="stats-row">
+                <div class="stat"><div class="stat-number">PAYE</div><div class="stat-label">Accurate Calculation</div></div>
+                <div class="stat"><div class="stat-number">UIF</div><div class="stat-label">With Monthly Cap</div></div>
+                <div class="stat"><div class="stat-number">PDF</div><div class="stat-label">Download & Save</div></div>
+                <div class="stat"><div class="stat-number">🇿🇦</div><div class="stat-label">SA Compliant</div></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">The Problem We Solved</h2>
+            <p class="section-description">Employees and contractors in South Africa need to estimate their take-home pay after tax, but most calculators are clunky external tools that don't integrate with business websites.</p>
+            <div class="highlight-box">
+                <h3>Our Solution: WordPress-Native Tax Calculator</h3>
+                <p style="color: var(--text-secondary); line-height: 1.8;">This plugin brings accurate South African tax calculations directly into your WordPress site with a simple shortcode. Your employees or clients can estimate their take-home pay without leaving your platform.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Core Calculations</h2>
+            <p class="section-description">Accurate South African income tax computation based on current SARS tax tables and regulations.</p>
+            <div class="two-col-grid">
+                <ul class="feature-list">
+                    <li><div class="feature-title">PAYE Calculation</div><div class="feature-desc">Accurate South African income tax computation for annual or monthly salaries</div></li>
+                    <li><div class="feature-title">UIF with Monthly Cap</div><div class="feature-desc">Unemployment Insurance Fund calculation respecting the R177.12 monthly cap</div></li>
+                </ul>
+                <ul class="feature-list">
+                    <li><div class="feature-title">Medical Tax Credits</div><div class="feature-desc">Automatic calculation of medical aid tax credits based on dependents</div></li>
+                    <li><div class="feature-title">Take-Home Pay Summary</div><div class="feature-desc">Clear breakdown showing gross income, deductions, and net take-home amount</div></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">WordPress Integration Features</h2>
+            <p class="section-description">Built as a native WordPress plugin with full integration into your site's ecosystem.</p>
+            <div class="two-col-grid">
+                <ul class="feature-list">
+                    <li><div class="feature-title">Simple Shortcode</div><div class="feature-desc">Install with [sa_tax_calculator] on any page or post</div></li>
+                    <li><div class="feature-title">Brand Customization</div><div class="feature-desc">Match your company colors from the WordPress settings panel</div></li>
+                </ul>
+                <ul class="feature-list">
+                    <li><div class="feature-title">PDF Generation</div><div class="feature-desc">Generate and download tax summary reports as PDFs</div></li>
+                    <li><div class="feature-title">Media Library Integration</div><div class="feature-desc">Option to save PDFs directly to WordPress Media Library for record-keeping</div></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Installation & Usage</h2>
+            <p class="section-description">Incredibly simple to deploy — just install the plugin and add the shortcode to any page.</p>
+            <div class="code-box">[sa_tax_calculator]</div>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">That's it. The calculator will appear on your page with your branded colors and full functionality.</p>
+            <div class="tech-stack">
+                <span class="tech-badge">WordPress Plugin</span>
+                <span class="tech-badge">PHP</span>
+                <span class="tech-badge">PDF Generation</span>
+                <span class="tech-badge">GPL-2.0 License</span>
+                <span class="tech-badge">Shortcode Ready</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Important Disclaimer</h2>
+            <div class="highlight-box">
+                <h3>Estimation Tool, Not Tax Advice</h3>
+                <p style="color: var(--text-secondary); line-height: 1.8;">This calculator is designed for estimation purposes only and is not a substitute for formal tax or payroll software. For official tax calculations, consult with a registered tax practitioner or use SARS-approved systems.</p>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2 class="section-title">Need Custom Tax Calculations?</h2>
+            <p class="section-description" style="margin: 0 auto 2rem; max-width: 600px;">We can build custom tax calculators, payroll systems, or compliance tools for your specific needs.</p>
+            <a href="mailto:contact@tsohle.co.za" class="btn">Schedule Consultation</a>
+        </section>
+    </div>
+
+    <footer><div class="container"><p>&copy; 2026 Tsohle Digital and Systems Solutions</p></div></footer>
+</body>
+</html>

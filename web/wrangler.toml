@@ -1,0 +1,10 @@
+# Cloudflare Pages configuration
+name = "tsohle-digital"
+compatibility_date = "2024-09-25"
+
+[build]
+command = "npm run build"
+destination = ".vercel/output/static"
+
+[env.production]
+name = "tsohle-digital"

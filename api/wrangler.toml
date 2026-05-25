@@ -1,0 +1,15 @@
+# Cloudflare Workers — NestJS API edge deployment
+name = "tsohle-api"
+main = "dist/main.js"
+compatibility_date = "2024-09-25"
+
+[vars]
+AI_PROVIDER = "grok"
+
+# Secrets (set via: wrangler secret put XAI_API_KEY)
+# XAI_API_KEY
+# GROQ_API_KEY
+
+[[routes]]
+pattern = "api.tsohle.co.za/*"
+zone_name = "tsohle.co.za"

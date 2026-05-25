@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiznizFlowPilot — Unified Operational Intelligence Platform | Tsohle Digital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B35;
+            --primary-dark: #E85A2A;
+            --secondary: #004E89;
+            --accent: #FFD23F;
+            --dark: #0A0F1C;
+            --dark-light: #1A1F2E;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B8C1D9;
+            --border: rgba(255,255,255,0.1);
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .logo-tsohle {
+            color: var(--primary);
+        }
+
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+        }
+
+        /* Hero */
+        .product-hero {
+            padding: 6rem 0 4rem;
+        }
+
+        .product-badge {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            max-width: 900px;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            padding: 3rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Raleway', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-family: 'Raleway', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-description {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            max-width: 800px;
+        }
+
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-title {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .feature-desc {
+            color: var(--text-secondary);
+        }
+
+        .highlight-box {
+            background: var(--dark-light);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+
+        .highlight-box h3 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .tech-badge {
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 8px;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .cta-section {
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .btn {
+            padding: 1.2rem 2.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5);
+        }
+
+        footer {
+            background: var(--dark-light);
+            padding: 3rem 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 968px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .stats-row,
+            .two-col-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <span class="logo-tsohle">Tsohle</span> Digital
+                </a>
+                <a href="index.html" class="back-link">← Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="product-hero">
+            <span class="product-badge">CRM + ERP Platform</span>
+            <h1>BiznizFlowPilot</h1>
+            <p class="hero-subtitle">
+                A unified operational intelligence platform that connects sales, operations, inventory, finance, and HR in one event-driven system. Built specifically for South African SMMEs who need enterprise capabilities without enterprise complexity.
+            </p>
+
+            <div class="stats-row">
+                <div class="stat">
+                    <div class="stat-number">431</div>
+                    <div class="stat-label">Automated Tests</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">80%+</div>
+                    <div class="stat-label">Code Coverage</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Multi-Tenant</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Event Processing</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">The Problem We Solved</h2>
+            <p class="section-description">
+                Most South African small and medium businesses run on disconnected tools — spreadsheets for inventory, separate apps for sales, different systems for accounting. This creates data silos, manual data entry, and operational chaos.
+            </p>
+            <div class="highlight-box">
+                <h3>Our Solution: Unified Operational Intelligence</h3>
+                <p style="color: var(--text-secondary); line-height: 1.8;">
+                    BiznizFlowPilot treats sales and operations as parts of one system, not separate departments. When a lead closes in the CRM, your ERP already knows about it. When inventory moves, your finance team sees it instantly. No manual data entry. No synchronization delays.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">CRM Side: Lead to Close</h2>
+            <p class="section-description">
+                The CRM handles your complete customer lifecycle with enforced workflows and intelligent automation.
+            </p>
+
+            <div class="two-col-grid">
+                <ul class="feature-list">
+                    <li>
+                        <div class="feature-title">Lead Pipeline Management</div>
+                        <div class="feature-desc">Enforced state transitions from New → Contacted → Qualified → Won/Lost with full audit trails</div>
+                    </li>
+                    <li>
+                        <div class="feature-title">Customer Relationship Tracking</div>
+                        <div class="feature-desc">Complete contact history, interaction logs, and relationship analytics in one view</div>
+                    </li>
+                    <li>
+                        <div class="feature-title">Task Management</div>
+                        <div class="feature-desc">Assignment, priorities, due dates with role-based access control and status updates</div>
+                    </li>
+                </ul>
+
+                <ul class="feature-list">
+                    <li>
+                        <div class="feature-title">Automated Follow-Ups</div>
+                        <div class="feature-desc">Idle lead detection automatically triggers follow-up tasks via Celery scheduled jobs</div>
+                    </li>
+                    <li>
+                        <div class="feature-title">CRM → ERP Handoff</div>
+                        <div class="feature-desc">When a lead is marked Won, a "Create Sales Order" action appears and pre-fills with customer data</div>
+                    </li>
+                    <li>
+                        <div class="feature-title">Activity Analytics</div>
+                        <div class="feature-desc">Real-time visibility into team performance, conversion rates, and pipeline health</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">ERP Side: Operations to Finance</h2>
+            <p class="section-description">
+                The ERP covers procurement, fulfillment, finance, HR, and inventory with state machine workflows and automated accounting.
+            </p>
+
+            <div class="two-col-grid">
+                <ul class="feature-list">
+                    <li>
+                        <div class="feature-title">Inventory Management</div>
+                        <div class="feature-desc">Multi-location stock tracking with warehouse/shelf locations and computed available = quantity − reserved</div>
+                    </li>
+                    <li>
+                        <div class="feature-title">Sales Orders</div>
+                        <div class="feature-desc">Draft → confirmed → shipped → delivered state machine with stock reservation and auto-generated SO numbers</div>
+                    </li>
+                    <li>
+                        <div class="feature-title">Purchase Orders</div>
+                        <div class="feature-desc">Draft → sent → received pipeline linked to suppliers with automated stock updates</div>
+                    </li>
+                </ul>
+
+                <ul class="feature-list">
+                    <li>
+                        <div class="feature-title">VAT-Inclusive Invoicing</div>
+                        <div class="feature-desc">Line items, discount support, PDF generation, and CSV export for accounting systems</div>
+                    </li>
+                    <li>
+                        <div class="feature-title">Finance Module</div>
+                        <div class="feature-desc">Expense tracking by category, P&L summary, and South African tax compliance</div>
+                    </li>
+                    <li>
+                        <div class="feature-title">HR Infrastructure</div>
+                        <div class="feature-desc">Leave management with approval workflows, payroll generation, and payslip records</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">The Engineering Differentiator</h2>
+            <p class="section-description">
+                What makes BiznizFlowPilot different isn't the features — it's the architecture. This is a production-grade system built on principles most agencies never touch.
+            </p>
+
+            <div class="highlight-box">
+                <h3>Event-Driven Backbone</h3>
+                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+                    Every significant action (lead created, order shipped, invoice issued, task completed) emits a structured event with full audit trail. This creates a complete operational history and enables intelligent automation.
+                </p>
+                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+                    <strong>Workflow Engine:</strong> Rule-based automation with trigger → conditions → actions logic. Create tasks, send emails, or call webhooks in response to any event.
+                </p>
+                <p style="color: var(--text-secondary); line-height: 1.8;">
+                    <strong>Async Processing:</strong> Celery + Redis workers handle event dispatch, workflow execution, retry orchestration, and stale-work recovery. The system never blocks waiting for external services.
+                </p>
+            </div>
+
+            <div class="tech-stack">
+                <span class="tech-badge">FastAPI</span>
+                <span class="tech-badge">PostgreSQL</span>
+                <span class="tech-badge">SQLAlchemy + Alembic</span>
+                <span class="tech-badge">Celery + Redis</span>
+                <span class="tech-badge">Next.js 16 App Router</span>
+                <span class="tech-badge">TypeScript</span>
+                <span class="tech-badge">Tailwind CSS v4</span>
+                <span class="tech-badge">JWT Authentication</span>
+                <span class="tech-badge">RBAC</span>
+                <span class="tech-badge">pytest (431 tests)</span>
+                <span class="tech-badge">GitHub Actions CI</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Additional Capabilities</h2>
+            
+            <div class="two-col-grid">
+                <ul class="feature-list">
+                    <li>
+                        <div class="feature-title">AI Chat Assistant</div>
+                        <div class="feature-desc">Pluggable LLM engine (Anthropic, Ollama, Groq) for in-app business chat with mention resolution</div>
+                    </li>
+                    <li>
+                        <div class="feature-title">Dashboard & Metrics</div>
+                        <div class="feature-desc">Tenant-scoped operational metrics across leads, tasks, orders, and workflow runs</div>
+                    </li>
+                </ul>
+
+                <ul class="feature-list">
+                    <li>
+                        <div class="feature-title">Admin Panel</div>
+                        <div class="feature-desc">Cross-tenant superadmin endpoints for platform oversight and management</div>
+                    </li>
+                    <li>
+                        <div class="feature-title">Complete Audit Trails</div>
+                        <div class="feature-desc">Every action is logged with timestamp, user, and full event context for compliance</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Quality & Testing</h2>
+            <p class="section-description">
+                We don't ship features. We ship confidence. Every system we build passes comprehensive quality gates before deployment.
+            </p>
+
+            <div class="highlight-box">
+                <h3>Production-Grade Testing</h3>
+                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+                    <strong>431 automated tests</strong> covering unit tests, integration tests, and end-to-end workflows
+                </p>
+                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+                    <strong>80%+ code coverage</strong> enforced in CI — features don't merge without passing the quality gate
+                </p>
+                <p style="color: var(--text-secondary); line-height: 1.8;">
+                    <strong>CI/CD Pipeline:</strong> GitHub Actions runs ruff lint, Alembic migrations, pytest suite, TypeScript checks, and Next.js builds on every commit
+                </p>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2 class="section-title">Ready to Unify Your Operations?</h2>
+            <p class="section-description" style="margin: 0 auto 2rem; max-width: 600px;">
+                Schedule a consultation to see how BiznizFlowPilot can eliminate your disconnected tools and manual workflows.
+            </p>
+            <a href="mailto:contact@tsohle.co.za" class="btn">Schedule Consultation</a>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Tsohle Digital and Systems Solutions</p>
+        </div>
+    </footer>
+</body>
+</html>
