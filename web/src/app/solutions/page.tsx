@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { CapabilityCategories } from '@/components/sections/CapabilityCategories';
 import { EngagementModel } from '@/components/sections/EngagementModel';
 import { FinalCTA } from '@/components/sections/FinalCTA';
+import { SystemLifecycle } from '@/components/sections/SystemLifecycle';
 
 export const metadata: Metadata = {
   title: 'Solutions',
@@ -29,6 +30,7 @@ export default function SolutionsPage() {
       </section>
 
       <CapabilityCategories />
+      <SystemLifecycle />
       <EngagementModel />
       <FinalCTA />
     </>

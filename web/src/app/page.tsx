@@ -144,6 +144,29 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Manifesto strip ──────────────────────────────────── */}
+      <section className="py-16 px-6 bg-dark border-y border-dark-border">
+        <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="max-w-2xl">
+            <p className="font-display font-black text-2xl lg:text-3xl text-white leading-snug">
+              We don&apos;t build projects.
+              <span className="text-gradient"> We architect infrastructure.</span>
+            </p>
+            <p className="text-text-secondary mt-3 text-base leading-relaxed">
+              That distinction changes the pricing, the timeline, the engagement model, and the
+              type of work we refuse. Six engineering principles explain exactly why.
+            </p>
+          </div>
+          <Link
+            href="/philosophy"
+            className="inline-flex items-center gap-2 border border-brand-orange/40 hover:border-brand-orange text-brand-orange font-semibold px-6 py-3 rounded-xl transition-all hover:-translate-y-px text-sm shrink-0 group"
+          >
+            Read our philosophy
+            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+      </section>
+
       {/* ── Trust bar ────────────────────────────────────────── */}
       <TrustLayer />
 

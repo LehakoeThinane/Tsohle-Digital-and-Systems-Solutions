@@ -30,6 +30,7 @@ export const NAV_LINKS = [
   { label: 'Work',        href: '/work' },
   { label: 'Enterprise',  href: '/for-enterprises' },
   { label: 'SMME',        href: '/for-smmEs' },
+  { label: 'Philosophy',  href: '/philosophy' },
   { label: 'About',       href: '/about' },
 ] as const;
 
