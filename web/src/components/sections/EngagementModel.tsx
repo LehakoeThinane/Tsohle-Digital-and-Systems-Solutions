@@ -41,13 +41,19 @@ export function EngagementModel() {
                 <div className="hidden lg:block absolute top-8 left-full w-full h-px bg-gradient-to-r from-brand-orange/40 to-transparent z-10 -translate-y-px" />
               )}
 
-              <div className="bg-dark-card border border-dark-border rounded-2xl p-6 h-full">
+              <div className="bg-dark-card border border-dark-border rounded-2xl p-6 h-full flex flex-col">
                 <div className="w-10 h-10 rounded-full bg-brand-orange/15 border border-brand-orange/30 flex items-center justify-center mb-4">
                   <span className="font-display font-black text-sm text-brand-orange">{step.number}</span>
                 </div>
                 <h3 className="font-display font-bold text-lg text-white mb-1">{step.title}</h3>
-                <p className="text-brand-orange text-xs font-semibold mb-3">{step.duration}</p>
-                <p className="text-text-secondary text-sm leading-relaxed">{step.description}</p>
+                <p className="text-text-muted text-xs font-medium mb-2">{step.duration}</p>
+                {step.price && (
+                  <p className="font-display font-black text-xl text-brand-orange mb-3">{step.price}</p>
+                )}
+                {!step.price && (
+                  <p className="font-display font-black text-xl text-green-400 mb-3">Free</p>
+                )}
+                <p className="text-text-secondary text-sm leading-relaxed mt-auto">{step.description}</p>
               </div>
             </motion.div>
           ))}
@@ -62,22 +68,22 @@ export function EngagementModel() {
         >
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-text-muted mb-2">
-              What to expect
+              Investment summary
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
               <div>
-                <p className="font-display font-bold text-2xl text-white">R18k – R65k</p>
-                <p className="text-text-secondary text-sm">Typical SMME project range</p>
+                <p className="font-display font-bold text-2xl text-green-400">Free</p>
+                <p className="text-text-secondary text-sm">Discovery call · 30 min</p>
               </div>
               <div className="hidden sm:block w-px bg-dark-border" />
               <div>
-                <p className="font-display font-bold text-2xl text-white">Custom</p>
-                <p className="text-text-secondary text-sm">Enterprise — scoped after audit</p>
+                <p className="font-display font-bold text-2xl text-white">R15,000</p>
+                <p className="text-text-secondary text-sm">Architecture assessment</p>
               </div>
               <div className="hidden sm:block w-px bg-dark-border" />
               <div>
-                <p className="font-display font-bold text-2xl text-white">Monthly</p>
-                <p className="text-text-secondary text-sm">SaaS products — contact for rates</p>
+                <p className="font-display font-bold text-2xl text-white">R95k – R140k</p>
+                <p className="text-text-secondary text-sm">Pilot → retainer per month</p>
               </div>
             </div>
           </div>
